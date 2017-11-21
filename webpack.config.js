@@ -20,6 +20,9 @@ module.exports = {
      }, {
          test: /\.css$/,
          loader: "style-loader!css-loader"
+     }, {
+         test: /\.less$/, 
+         loader: 'style!css!less'
      }]
  },
  resolve: {
@@ -30,7 +33,8 @@ module.exports = {
  },
  devServer: {
     inline: true,
-    port: 8888
+    port: 8888,
+    historyApiFallback: true // 解决Cannot Get [PageName]
  },
 };
 
