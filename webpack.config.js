@@ -23,6 +23,18 @@ module.exports = {
      }, {
          test: /\.less$/, 
          loader: 'style!css!less'
+     }, {
+          test: /\.(jpe?g|png|gif)$/,
+          loader: 'file-loader',
+          query: {
+            name: 'assets/img/[name].[ext]'
+          }
+     }, {
+          test: /\.(svg|eot|ttf|woff|woff2|)$/,
+          loader: 'file-loader',
+          query: {
+            name: 'assets/fonts/[name].[ext]'
+          }
      }]
  },
  resolve: {
