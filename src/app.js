@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 
 import { BrowserRouter, Route, Switch, Link, NavLink, Redirect } from 'react-router-dom';
 
+import 'antd-mobile/dist/antd-mobile.css';
+
 import './app.css';
 
 import HomePage from './components/home/home.js';

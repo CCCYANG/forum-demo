@@ -15,14 +15,18 @@ module.exports = {
          loader: 'babel-loader',
          query: {
              plugins: ['transform-runtime'],
-             presets: ['es2015', 'react']
+             presets: ['es2015', 'react', 'stage-2']
          }
      }, {
          test: /\.css$/,
          loader: "style-loader!css-loader"
      }, {
          test: /\.less$/, 
-         loader: 'style!css!less'
+         loaders: [
+          require.resolve('style-loader'),
+          require.resolve('css-loader'),
+          require.resolve('less-loader')
+         ]
      }, {
           test: /\.(jpe?g|png|gif)$/,
           loader: 'file-loader',
